@@ -1,12 +1,12 @@
 {
-    "name": "GPlink_Bot",
-    "description": "Make short link by using GPlink API key",
+    "name": "Url-Shortener-bot",
+    "description": "Make short link by using Shortener Website API key",
     "keywords": [
         "telegram",
-        "gplink"
+        "shortener"
     ],
-    "website": "https://github.com/Mahesh0253/GPlink-bot",
-    "repository": "https://github.com/Mahesh0253/GPlink-bot",
+    "website": "https://github.com/kevinnadar22/URL-Shortener-bot",
+    "repository": "https://github.com/kevinnadar22/URL-Shortener-bot",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token",
@@ -18,6 +18,10 @@
         },
         "API_HASH": {
             "description": "Get this value from https://my.telegram.org",
+            "value": ""
+        },
+        "WEBSITE": {
+            "description": "Any shortener website which you want to use. Ex. droplink.co (Note: Don't type https, /, : or anything like that. Only type the website name Ex: droplink.co)",
             "value": ""
         },
         "API_KEY": {
