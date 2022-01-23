@@ -11,7 +11,7 @@ WEBSITE = os.environ.get('WEBSITE')
 
 try:
     bot = Client('shortener bot',
-                 api_id=API_ID,
+                 api_id=int(API_ID),
                  api_hash=API_HASH,
                  bot_token=BOT_TOKEN,
                  workers=50,
