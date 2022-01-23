@@ -1,5 +1,5 @@
-# GPlink-bot
-Make short link by using [GPlink](https://gplinks.in/) API key
+# Url-Shortener-bot
+Make short link by using Shortener Website API key
 ### Installation
 
 #### The Easy Way
@@ -12,4 +12,5 @@ Make short link by using [GPlink](https://gplinks.in/) API key
 
 * `API_ID`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
-* `API_KEY`: Create [GPlink](https://gplinks.in/) account then get this value from [GPlink API](https://gplinks.in/member/tools/api)
+* `WEBSITE`: Any shortener website which you want to use. Ex. droplink.co
+* `API_KEY`: API_KEY of the WEBSITE you want to use. Get this value from https://your_website/member/tools/api
