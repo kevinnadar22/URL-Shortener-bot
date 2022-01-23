@@ -14,3 +14,7 @@ Make short link by using Shortener Website API key
 * `API_HASH`: Get this value from [telegram.org](https://my.telegram.org/apps)
 * `WEBSITE`: Any shortener website which you want to use. Ex. droplink.co
 * `API_KEY`: API_KEY of the WEBSITE you want to use. Get this value from https://your_website/member/tools/api
+
+##### Required Variables
+
+Original Repo - [Mahesh0253](https://github.com/Mahesh0253/GPlink-bot)
