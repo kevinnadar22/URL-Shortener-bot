@@ -15,6 +15,10 @@ Make short link by using Shortener Website API key
 * `WEBSITE`: Any shortener website which you want to use. Ex. droplink.co
 * `API_KEY`: API_KEY of the WEBSITE you want to use. Get this value from https://your_website/member/tools/api
 
-##### Required Variables
+##### Credits
 
 Original Repo - [Mahesh0253](https://github.com/Mahesh0253/GPlink-bot)
+
+##### Support
+
+[Support](https://telegram.me/ask_admin001)
