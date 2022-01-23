@@ -21,4 +21,4 @@ Original Repo - [Mahesh0253](https://github.com/Mahesh0253/GPlink-bot)
 
 ##### Support
 
-[Support](https://telegram.me/ask_admin001)
+* [Contact](https://telegram.me/ask_admin001)
