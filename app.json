@@ -1,7 +1,7 @@
 {
     "name": "Url-Shortener-bot",
     "description": "Make short link by using Shortener Website API key",
-   "logo":"https://www.webdevelopersnotes.com/wp-content/uploads/shorten-url-services.png",
+    "logo":"https://www.webdevelopersnotes.com/wp-content/uploads/shorten-url-services.png",
     "keywords": [
         "telegram",
         "shortener"
