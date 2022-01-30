@@ -1,5 +1,3 @@
 pyrogram==1.2.20
 tgcrypto==1.2.2
 aiohttp==3.8.1
-emoji
-requests
