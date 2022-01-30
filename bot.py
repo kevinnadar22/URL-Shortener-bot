@@ -7,7 +7,10 @@ try:
                  api_id=int(API_ID),
                  api_hash=API_HASH,
 <<<<<<< HEAD
+<<<<<<< HEAD
                  plugins=dict(root="plugins"),
+=======
+>>>>>>> parent of adff085 (Update bot.py)
 =======
 >>>>>>> parent of adff085 (Update bot.py)
                  bot_token=BOT_TOKEN,
