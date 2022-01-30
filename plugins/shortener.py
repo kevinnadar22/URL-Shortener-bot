@@ -4,12 +4,12 @@ import aiohttp
 from pyrogram import Client, filters
 import requests
 import emoji
+from config import *
 
 
 # ##################################  droplink  #################################################################
 
-
-@Client.on_message(filters.command('dp'))
+@Client.on_message(filters.command('short'))
 async def reply_text(c, m):
 
     text = await m.reply_text("`Processing...... May take some time`")
@@ -32,12 +32,12 @@ async def reply_text(c, m):
 
     elif m.reply_to_message.text:
         txt = await bulk_shortener(m.reply_to_message.text)
-        r = f"**{txt}**\n\n**@T2links**"
+        r = f"**{txt}**\n\n**{SUPPORT_CHANNEL}**"
         await m.reply_text(r)
     elif m.reply_to_message.media:
         txt = await bulk_shortener(m.reply_to_message.caption)
         id = m.reply_to_message.photo.file_id
-        r = f"**{txt}**\n\n**@T2links**"
+        r = f"**{txt}**\n\n**{SUPPORT_CHANNEL}**"
         await m.reply_photo(id, caption=r)
 
     await text.delete()
@@ -64,8 +64,8 @@ async def bulk_shortener(message):
 
 
 async def get_shortlink(link):
-    url = 'https://droplink.co/api'
-    params = {'api': "1aab74171e9891abd0ba799e3fd568c9598a79e1", 'url': link}
+    url = f'https://{WEBSITE}/api'
+    params = {'api': API_KEY, 'url': link}
 
     async with aiohttp.ClientSession() as session:
         async with session.get(url, params=params, raise_for_status=True, ssl=False) as response:
@@ -98,12 +98,12 @@ async def mdisk(c, m):
 
         elif m.reply_to_message.text:
             txt = await mdisk_bulk_shortener(m.reply_to_message.text)
-            r = f"**{txt}**\n\n**@T2links**"
+            r = f"**{txt}**\n\n**{SUPPORT_CHANNEL}**"
             await m.reply_text(r)
         elif m.reply_to_message.media:
             txt = await mdisk_bulk_shortener(m.reply_to_message.caption)
             id = m.reply_to_message.photo.file_id
-            r = f"**{txt}**\n\n**@T2links**"
+            r = f"**{txt}**\n\n**{SUPPORT_CHANNEL}**"
             await m.reply_photo(id, caption=r)
         await text.delete()
     except Exception as e:
@@ -134,7 +134,7 @@ async def mdisk_bulk_shortener(message):
 async def get_mdisk(link):
     url = 'https://diskuploader.mypowerdisk.com/v1/tp/cp'
     param = {'token':
-                 '6LZq851sXoPHuwqgiKQq', 'link': link
+                 MDISK_KEY, 'link': link
              }
     res = requests.post(url, json=param)
     shareLink = res.json()
@@ -144,7 +144,7 @@ async def get_mdisk(link):
 ########################################Mdisk and droplink#######################################################
 
 
-@Client.on_message(filters.command('shorten'))
+@Client.on_message(filters.command('bulk'))
 async def shorten(c, m):
     try:
         text = await m.reply_text("`Converting other MDisk links to your MDisk account... May take some time`")
@@ -169,14 +169,14 @@ async def shorten(c, m):
             await text.edit(
                 "Converted all links to your MDisk account. Now converting all your MDisk links to droplink url.....")
             txt = await bulk_shortener(txt)
-            r = f"**{txt}**\n\n**@T2links**"
+            r = f"**{txt}**\n\n**{SUPPORT_CHANNEL}**"
             await m.reply_text(r)
 
         elif m.reply_to_message.media:
             txt = await mdisks_bulk_shortener(m.reply_to_message.caption)
             txt = await bulk_shortener(txt)
             id = m.reply_to_message.photo.file_id
-            r = f"**{txt}**\n\n**@T2links**"
+            r = f"**{txt}**\n\n**{SUPPORT_CHANNEL}**"
             await m.reply_photo(id, caption=r)
 
         await text.delete()
