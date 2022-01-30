@@ -6,7 +6,10 @@ try:
     bot = Client('shortener bot',
                  api_id=int(API_ID),
                  api_hash=API_HASH,
+<<<<<<< HEAD
                  plugins=dict(root="plugins"),
+=======
+>>>>>>> parent of adff085 (Update bot.py)
                  bot_token=BOT_TOKEN,
                  workers=50,
                  sleep_threshold=10)
