@@ -5,13 +5,11 @@ from pyrogram import Client, filters
 import requests
 import emoji
 
-chat = [1166625664, 2132021818, 1383296549]
-
 
 # ##################################  droplink  #################################################################
 
 
-@Client.on_message(filters.command('dp') & filters.chat(chat))
+@Client.on_message(filters.command('dp'))
 async def reply_text(c, m):
 
     text = await m.reply_text("`Processing...... May take some time`")
@@ -78,7 +76,7 @@ async def get_shortlink(link):
 # ##################################  Mdisk  #################################################################
 
 
-@Client.on_message(filters.command('mdisk') & filters.chat(chat))
+@Client.on_message(filters.command('mdisk'))
 async def mdisk(c, m):
     try:
         text = await m.reply_text("`Processing...... May take some time`")
@@ -146,7 +144,7 @@ async def get_mdisk(link):
 ########################################Mdisk and droplink#######################################################
 
 
-@Client.on_message(filters.command('shorten') & filters.chat(chat))
+@Client.on_message(filters.command('shorten'))
 async def shorten(c, m):
     try:
         text = await m.reply_text("`Converting other MDisk links to your MDisk account... May take some time`")
