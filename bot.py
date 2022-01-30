@@ -1,12 +1,19 @@
+import os
 import aiohttp
 from pyrogram import Client, filters
-from config import *
+
+API_ID = os.environ.get('API_ID')
+API_HASH = os.environ.get('API_HASH')
+BOT_TOKEN = os.environ.get('BOT_TOKEN')
+API_KEY = os.environ.get('API_KEY')
+WEBSITE = os.environ.get('WEBSITE')
+
 
 try:
     bot = Client('shortener bot',
                  api_id=int(API_ID),
                  api_hash=API_HASH,
-                 plugins=dict(root="plugins"),
+                 plugins = dict(root="plugins")
                  bot_token=BOT_TOKEN,
                  workers=50,
                  sleep_threshold=10)
@@ -42,7 +49,7 @@ async def link_handler(bot, message):
         x = alias1.replace(" ", "")
     else:
         link = message.matches[0].group(0)
-        x = ""
+        x= ""
     short_link = await get_shortlink(link, x)
     await message.reply(short_link, quote=True)
 
@@ -62,6 +69,5 @@ async def get_shortlink(link, x):
                 return f"<code>{data['shortenedUrl']}</code>\n\nHere is your Link:\n{data['shortenedUrl']}"
             else:
                 return f"Error: {data['message']}"
-
 
 bot.run()
