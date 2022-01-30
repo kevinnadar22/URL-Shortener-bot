@@ -6,8 +6,8 @@
         "telegram",
         "shortener"
     ],
-    "website": "https://github.com/kevinnadar22/URL-Shortener-bot",
-    "repository": "https://github.com/kevinnadar22/URL-Shortener-bot",
+    "website": "https://github.com/kevinnadar22/URL-Shortener-bot/tree/V2",
+    "repository": "https://github.com/kevinnadar22/URL-Shortener-bot/tree/V2",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token",
@@ -27,6 +27,14 @@
         },
         "API_KEY": {
             "description": "Get API key from https://your_website/member/tools/api",
+            "value": ""
+        },
+        "MDISK_KEY": {
+            "description": "Get MDISK API key from https://t.me/VideoToolMoneyTreebot",
+            "value": ""
+        },
+        "SUPPORT_CHANNEL": {
+            "description": "Your telegram channel with @. Eg: @t2links",
             "value": ""
         }
     },
