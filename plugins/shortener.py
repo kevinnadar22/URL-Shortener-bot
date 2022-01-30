@@ -2,19 +2,8 @@ import aiohttp
 from pyrogram import Client, filters
 from config import *
 
-try:
-    bot = Client('shortener bot',
-                 api_id=int(API_ID),
-                 api_hash=API_HASH,
-                 plugins=dict(root="plugins"),
-                 bot_token=BOT_TOKEN,
-                 workers=50,
-                 sleep_threshold=10)
-except Exception:
-    print("Add var values properly. Read readme.md once")
 
-
-@bot.on_message(filters.command('start'))
+@Client.on_message(filters.command('start'))
 async def start(bot, message):
     start_msg = f"""
 Hi {message.chat.first_name}!
@@ -30,7 +19,7 @@ Ex: https://t.me/example | Example
     await message.reply_text(start_msg, disable_web_page_preview=True, quote=True)
 
 
-@bot.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
+@Client.on_message(filters.regex(r'https?://[^\s]+') & filters.private)
 async def link_handler(bot, message):
     if "|" in message.text:
         link_parts = message.text.split("|")
@@ -64,4 +53,3 @@ async def get_shortlink(link, x):
                 return f"Error: {data['message']}"
 
 
-bot.run()
