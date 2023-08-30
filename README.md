@@ -1,5 +1,5 @@
 # Url-Shortener-bot
-Make short link by using Shortener Website API key
+Make short link by using Shortenern Website API key
 ### Installation
 
 #### The Easy Way
